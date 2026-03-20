@@ -361,6 +361,65 @@ class ChartWidget(QWidget):
             padding=0,
         )
 
+    def append_bars(self, new_df: pd.DataFrame):
+        """완성된 새 바를 기존 차트에 추가 (실시간 모드용)"""
+        if new_df is None or new_df.empty:
+            return
+
+        clean = new_df.dropna(subset=["Open", "High", "Low", "Close"])
+        if clean.empty:
+            return
+
+        if self._df is None or self._df.empty:
+            self.update_candles(clean)
+            return
+
+        # 중복 제거 후 이어붙이기
+        combined = pd.concat([self._df, clean])
+        combined = combined[~combined.index.duplicated(keep="last")]
+        combined = combined.sort_index()
+
+        self._df = combined
+        self._redraw_candles(scroll_to_end=True)
+
+    def update_latest_bar(self, bar: pd.Series):
+        """현재 진행 중인 미완성 바 업데이트 (실시간 모드용)"""
+        if self._df is None or self._df.empty:
+            return
+
+        # 마지막 바가 같은 타임스탬프면 업데이트, 아니면 임시 추가
+        if bar.name in self._df.index:
+            self._df.loc[bar.name] = bar
+        else:
+            # 임시 미완성 바 — 다음 완성 바가 오면 replace됨
+            new_row = pd.DataFrame([bar], index=[bar.name])
+            self._df = pd.concat([self._df, new_row])
+
+        self._redraw_candles(scroll_to_end=True)
+
+    def _redraw_candles(self, scroll_to_end: bool = False):
+        """내부 _df 기준으로 캔들/거래량 재렌더링"""
+        if self._df is None or self._df.empty:
+            return
+
+        clean_df = self._df.dropna(subset=["Open", "High", "Low", "Close"])
+        if clean_df.empty:
+            return
+
+        candle_data = [
+            (i, float(row["Open"]), float(row["High"]), float(row["Low"]), float(row["Close"]))
+            for i, (_, row) in enumerate(clean_df.iterrows())
+        ]
+        self.candle_item.set_data(candle_data)
+
+        volumes = clean_df["Volume"].fillna(0).astype(float).values
+        ts = list(range(len(clean_df)))
+        self.volume_bars.setOpts(x=ts, height=volumes, width=0.6)
+
+        if scroll_to_end:
+            n = len(clean_df)
+            self.candle_plot.setXRange(max(0, n - 100), n + 2, padding=0)
+
     def clear(self):
         """모든 오버레이 초기화"""
         for item in self._marker_items:

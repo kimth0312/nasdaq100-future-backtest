@@ -17,6 +17,7 @@ from ui.settings_panel import SettingsPanel
 from ui.performance_panel import PerformancePanel
 from ui.trades_table import TradesTable
 from ui.worker import BacktestWorker
+from ui.live_worker import LiveWorker
 
 logger = logging.getLogger(__name__)
 
@@ -31,6 +32,7 @@ class MainWindow(QMainWindow):
 
         self._store = DataStore()
         self._worker = None
+        self._live_worker = None
         self._results = []
         self._replay_timer = QTimer(self)
         self._replay_index = 0
@@ -89,6 +91,10 @@ class MainWindow(QMainWindow):
 
         # Settings → replay
         self.settings_panel.replay_clicked.connect(self._on_replay)
+
+        # Settings → live
+        self.settings_panel.live_start_clicked.connect(self._on_live_start)
+        self.settings_panel.live_stop_clicked.connect(self._on_live_stop)
 
         # Replay timer
         self._replay_timer.timeout.connect(self._replay_tick)
@@ -207,3 +213,62 @@ class MainWindow(QMainWindow):
         if self._replay_index >= len(self._replay_df):
             self._replay_timer.stop()
             self._replay_index = 0
+
+    # ── 실시간 모드 ──────────────────────────────────────────────
+
+    def _on_live_start(self, symbol: str, interval: str):
+        """실시간 모드 시작"""
+        # Replay 중단
+        if self._replay_timer.isActive():
+            self._replay_timer.stop()
+
+        # 기존 백테스트 워커 중단
+        if self._worker is not None and self._worker.isRunning():
+            self._worker.quit()
+            self._worker.wait(2000)
+
+        # 기존 Live 워커 중단
+        if self._live_worker is not None:
+            self._live_worker.stop()
+            self._live_worker = None
+
+        self.chart_widget.clear()
+        self.settings_panel.update_live_status("연결 중...")
+
+        self._live_worker = LiveWorker(symbol, interval)
+        self._live_worker.initial_data_ready.connect(self._on_live_initial_data)
+        self._live_worker.new_bars.connect(self._on_live_new_bars)
+        self._live_worker.latest_bar_updated.connect(self._on_live_latest_bar)
+        self._live_worker.price_updated.connect(self._on_live_price_updated)
+        self._live_worker.status_changed.connect(self.settings_panel.update_live_status)
+        self._live_worker.error_occurred.connect(self._on_live_error)
+        self._live_worker.start()
+
+    def _on_live_stop(self):
+        """실시간 모드 중단"""
+        if self._live_worker is not None:
+            self._live_worker.stop()
+            self._live_worker = None
+        self.settings_panel.update_live_status("중단됨")
+
+    def _on_live_initial_data(self, df):
+        """초기 히스토리 데이터 수신"""
+        self.chart_widget.update_candles(df)
+
+    def _on_live_new_bars(self, new_df):
+        """새로 완성된 바 수신"""
+        self.chart_widget.append_bars(new_df)
+
+    def _on_live_latest_bar(self, bar):
+        """현재 진행 중인 미완성 바 업데이트"""
+        self.chart_widget.update_latest_bar(bar)
+
+    def _on_live_price_updated(self, price: float, prev_close: float, change_pct: float):
+        """현재가 업데이트"""
+        self.settings_panel.update_live_price(price, prev_close, change_pct)
+
+    def _on_live_error(self, error_msg: str):
+        """실시간 오류 처리"""
+        self.settings_panel.set_live_error()
+        self.settings_panel.update_live_status("오류 발생")
+        QMessageBox.critical(self, "실시간 데이터 오류", error_msg)

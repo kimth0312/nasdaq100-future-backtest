@@ -35,6 +35,8 @@ class SettingsPanel(QWidget):
 
     run_clicked = Signal(str, str, object, object, list)  # symbol, interval, start, end, strategies
     replay_clicked = Signal(float)  # speed
+    live_start_clicked = Signal(str, str)   # symbol, interval
+    live_stop_clicked = Signal()
 
     def __init__(self, strategies, parent=None):
         """
@@ -177,6 +179,61 @@ class SettingsPanel(QWidget):
         sep3.setStyleSheet("color: #444;")
         main_layout.addWidget(sep3)
 
+        sep_live = QFrame()
+        sep_live.setFrameShape(QFrame.Shape.HLine)
+        sep_live.setStyleSheet("color: #444;")
+        main_layout.addWidget(sep_live)
+
+        # ── 실시간 모드 섹션 ──
+        live_label = QLabel("실시간 모드")
+        live_label.setStyleSheet("font-weight: bold; color: #E74C3C;")
+        main_layout.addWidget(live_label)
+
+        # 현재가 표시
+        self.price_label = QLabel("—")
+        self.price_label.setStyleSheet(
+            "font-size: 20px; font-weight: bold; color: #F0F0F0; qproperty-alignment: AlignCenter;"
+        )
+        self.price_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        main_layout.addWidget(self.price_label)
+
+        self.price_change_label = QLabel("")
+        self.price_change_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.price_change_label.setStyleSheet("font-size: 12px; color: #888;")
+        main_layout.addWidget(self.price_change_label)
+
+        self.live_status_label = QLabel("대기 중")
+        self.live_status_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.live_status_label.setStyleSheet("font-size: 10px; color: #888;")
+        main_layout.addWidget(self.live_status_label)
+
+        # Live 시작/중단 버튼
+        self.live_btn = QPushButton("● Live 시작")
+        self.live_btn.setStyleSheet("""
+            QPushButton {
+                background-color: #E74C3C;
+                color: #FFF;
+                font-weight: bold;
+                padding: 8px;
+                border-radius: 4px;
+            }
+            QPushButton:hover { background-color: #C0392B; }
+            QPushButton:disabled { background-color: #444; color: #888; }
+            QPushButton[live="true"] {
+                background-color: #555;
+                color: #FFF;
+            }
+        """)
+        self.live_btn.setToolTip("실시간 데이터 수신 시작/중단")
+        self.live_btn.setCheckable(True)
+        main_layout.addWidget(self.live_btn)
+
+        sep4 = QFrame()
+        sep4.setFrameShape(QFrame.Shape.HLine)
+        sep4.setStyleSheet("color: #444;")
+        main_layout.addWidget(sep4)
+
+        # ── 백테스트 섹션 ──
         # Run 버튼
         self.run_btn = QPushButton("▶  Run Backtest")
         self.run_btn.setStyleSheet("""
@@ -242,6 +299,7 @@ class SettingsPanel(QWidget):
         self.speed_slider.valueChanged.connect(
             lambda v: self.speed_label.setText(f"{v}x")
         )
+        self.live_btn.toggled.connect(self._on_live_toggled)
 
     def _on_interval_changed(self, interval: str):
         """봉 단위 변경 시 날짜 범위 자동 조정"""
@@ -311,6 +369,60 @@ class SettingsPanel(QWidget):
                 instance = strategy_class(params=params if params else None)
                 selected.append(instance)
         return selected
+
+    def _on_live_toggled(self, checked: bool):
+        if checked:
+            self.live_btn.setText("■ Live 중단")
+            self.live_btn.setStyleSheet("""
+                QPushButton {
+                    background-color: #555;
+                    color: #FF6B6B;
+                    font-weight: bold;
+                    padding: 8px;
+                    border-radius: 4px;
+                    border: 1px solid #E74C3C;
+                }
+                QPushButton:hover { background-color: #666; }
+            """)
+            # 백테스트 버튼 비활성화
+            self.run_btn.setEnabled(False)
+            self.live_start_clicked.emit("NQ=F", self.interval_combo.currentText())
+        else:
+            self.live_btn.setText("● Live 시작")
+            self.live_btn.setStyleSheet("""
+                QPushButton {
+                    background-color: #E74C3C;
+                    color: #FFF;
+                    font-weight: bold;
+                    padding: 8px;
+                    border-radius: 4px;
+                }
+                QPushButton:hover { background-color: #C0392B; }
+                QPushButton:disabled { background-color: #444; color: #888; }
+            """)
+            self.run_btn.setEnabled(True)
+            self.live_status_label.setText("대기 중")
+            self.live_stop_clicked.emit()
+
+    def update_live_price(self, price: float, prev_close: float, change_pct: float):
+        """실시간 현재가 업데이트"""
+        self.price_label.setText(f"{price:,.2f}")
+        sign = "+" if change_pct >= 0 else ""
+        color = "#2ECC71" if change_pct >= 0 else "#E74C3C"
+        change_pts = price - prev_close
+        self.price_change_label.setText(
+            f'<span style="color:{color}">{sign}{change_pts:,.2f} ({sign}{change_pct:.2f}%)</span>'
+        )
+        self.price_label.setStyleSheet(
+            f"font-size: 20px; font-weight: bold; color: {color}; qproperty-alignment: AlignCenter;"
+        )
+
+    def update_live_status(self, status: str):
+        self.live_status_label.setText(status)
+
+    def set_live_error(self):
+        """Live 오류 시 버튼 상태 복원"""
+        self.live_btn.setChecked(False)
 
     def set_running(self, running: bool):
         """실행 중 UI 상태 관리"""
