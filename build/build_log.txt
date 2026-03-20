@@ -1,0 +1,384 @@
+41 INFO: PyInstaller: 6.19.0, contrib hooks: 2026.3
+41 INFO: Python: 3.13.7
+52 INFO: Platform: macOS-26.3.1-arm64-arm-64bit-Mach-O
+52 INFO: Python environment: /Users/taehyunkim/Project/claude-test/nq_backtester/venv
+54 INFO: Removing temporary files and cleaning cache in /Users/taehyunkim/Library/Application Support/pyinstaller
+59 WARNING: Failed to collect submodules for 'PySide6.scripts.deploy_lib' because importing 'PySide6.scripts.deploy_lib' raised: ModuleNotFoundError: No module named 'project_lib'
+193 WARNING: Failed to collect submodules for 'pyqtgraph.opengl' because importing 'pyqtgraph.opengl' raised: ModuleNotFoundError: No module named 'OpenGL'
+1774 INFO: Module search paths (PYTHONPATH):
+['/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/lib/python313.zip',
+ '/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/lib/python3.13',
+ '/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/lib/python3.13/lib-dynload',
+ '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages',
+ '/Users/taehyunkim/Project/claude-test/nq_backtester',
+ '/Users/taehyunkim/Project/claude-test/nq_backtester/src']
+1891 INFO: Appending 'datas' from .spec
+1892 INFO: checking Analysis
+1892 INFO: Building Analysis because Analysis-00.toc is non existent
+1892 INFO: Looking for Python shared library...
+1894 INFO: Using Python shared library: /opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/Python
+1894 INFO: Running Analysis Analysis-00.toc
+1894 INFO: Target bytecode optimization level: 0
+1894 INFO: Initializing module dependency graph...
+1894 INFO: Initializing module graph hook caches...
+1901 INFO: Analyzing modules for base_library.zip ...
+2212 INFO: Processing standard module hook 'hook-encodings.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+2485 INFO: Processing standard module hook 'hook-heapq.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+3237 INFO: Processing standard module hook 'hook-pickle.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+3967 INFO: Caching module dependency graph...
+3985 INFO: Analyzing /Users/taehyunkim/Project/claude-test/nq_backtester/src/main.py
+3989 INFO: Processing standard module hook 'hook-PySide6.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+4073 INFO: Processing standard module hook 'hook-shiboken6.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+4168 INFO: Processing standard module hook 'hook-PySide6.QtNetwork.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+6929 INFO: Processing standard module hook 'hook-PySide6.QtCore.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+7445 INFO: Processing standard module hook 'hook-PySide6.QtWidgets.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+7926 INFO: Processing standard module hook 'hook-PySide6.QtGui.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+8131 INFO: Processing standard module hook 'hook-pandas.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+8862 INFO: Processing standard module hook 'hook-platform.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+8879 INFO: Processing standard module hook 'hook-xml.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+8892 INFO: Processing standard module hook 'hook-_ctypes.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+8903 INFO: Processing standard module hook 'hook-sysconfig.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+8910 INFO: Processing standard module hook 'hook-_osx_support.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+8922 INFO: Processing standard module hook 'hook-numpy.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+9151 INFO: Processing standard module hook 'hook-difflib.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+9260 INFO: Processing standard module hook 'hook-multiprocessing.util.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+10463 INFO: Processing pre-safe-import-module hook 'hook-typing_extensions.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks/pre_safe_import_module'
+10463 INFO: SetuptoolsInfo: initializing cached setuptools info...
+10927 INFO: Processing standard module hook 'hook-charset_normalizer.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+11161 INFO: Processing standard module hook 'hook-zoneinfo.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+11878 INFO: Processing standard module hook 'hook-pandas.io.formats.style.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+12594 INFO: Processing standard module hook 'hook-pyarrow.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+12909 INFO: Processing standard module hook 'hook-urllib3.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+12957 INFO: Processing pre-safe-import-module hook 'hook-backports.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks/pre_safe_import_module'
+12957 INFO: Setuptools: 'backports' appears to be a full setuptools-vendored copy - creating alias to 'setuptools._vendor.backports'!
+12960 INFO: Processing standard module hook 'hook-setuptools.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+12966 INFO: Processing pre-safe-import-module hook 'hook-distutils.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks/pre_safe_import_module'
+12980 INFO: Processing pre-safe-import-module hook 'hook-jaraco.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks/pre_safe_import_module'
+12980 INFO: Setuptools: 'jaraco' appears to be a full setuptools-vendored copy - creating alias to 'setuptools._vendor.jaraco'!
+12985 INFO: Processing pre-safe-import-module hook 'hook-more_itertools.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks/pre_safe_import_module'
+12985 INFO: Setuptools: 'more_itertools' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.more_itertools'!
+13098 INFO: Processing pre-safe-import-module hook 'hook-packaging.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks/pre_safe_import_module'
+13177 INFO: Processing standard module hook 'hook-setuptools._vendor.jaraco.text.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+13178 INFO: Processing pre-safe-import-module hook 'hook-importlib_resources.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks/pre_safe_import_module'
+13321 INFO: Processing pre-safe-import-module hook 'hook-importlib_metadata.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks/pre_safe_import_module'
+13321 INFO: Setuptools: 'importlib_metadata' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.importlib_metadata'!
+13334 INFO: Processing standard module hook 'hook-setuptools._vendor.importlib_metadata.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+13343 INFO: Processing pre-safe-import-module hook 'hook-zipp.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks/pre_safe_import_module'
+13344 INFO: Setuptools: 'zipp' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.zipp'!
+13465 INFO: Processing pre-safe-import-module hook 'hook-tomli.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks/pre_safe_import_module'
+13465 INFO: Setuptools: 'tomli' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.tomli'!
+13718 INFO: Processing pre-safe-import-module hook 'hook-wheel.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks/pre_safe_import_module'
+13718 INFO: Setuptools: 'wheel' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.wheel'!
+13969 INFO: Processing standard module hook 'hook-certifi.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+14622 INFO: Processing standard module hook 'hook-pandas.plotting.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+14913 INFO: Processing standard module hook 'hook-dateutil.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+14990 INFO: Processing pre-safe-import-module hook 'hook-six.moves.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks/pre_safe_import_module'
+15683 INFO: Processing standard module hook 'hook-sqlite3.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+15788 INFO: Processing standard module hook 'hook-pandas.io.clipboard.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+15926 INFO: Processing standard module hook 'hook-xml.etree.cElementTree.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+15930 INFO: Processing standard module hook 'hook-xml.dom.domreg.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+16116 INFO: Processing standard module hook 'hook-pytest.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+16229 INFO: Processing standard module hook 'hook-pygments.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+16637 INFO: Processing standard module hook 'hook-py.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+17536 INFO: Processing standard module hook 'hook-pytz.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+17944 INFO: Processing pre-safe-import-module hook 'hook-platformdirs.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks/pre_safe_import_module'
+17951 INFO: Processing standard module hook 'hook-platformdirs.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+18005 INFO: Processing standard module hook 'hook-websockets.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+18672 INFO: Processing standard module hook 'hook-pyqtgraph.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+250 WARNING: Failed to collect submodules for 'pyqtgraph.opengl' because importing 'pyqtgraph.opengl' raised: ModuleNotFoundError: No module named 'OpenGL'
+19076 INFO: hook-pyqtgraph: selected 'PySide6' as Qt bindings because hook for 'PySide6' has been run before.
+19094 INFO: Processing standard module hook 'hook-PySide6.QtSvg.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+19172 INFO: Processing standard module hook 'hook-PySide6.QtOpenGLWidgets.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+19261 INFO: Processing standard module hook 'hook-PySide6.QtTest.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+20258 INFO: Analyzing hidden import 'PySide6.Qt3DAnimation'
+20276 INFO: Processing standard module hook 'hook-PySide6.Qt3DAnimation.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+20366 INFO: Processing standard module hook 'hook-PySide6.Qt3DCore.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+20519 INFO: Processing standard module hook 'hook-PySide6.Qt3DRender.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+21539 INFO: Processing standard module hook 'hook-PySide6.QtOpenGL.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+21644 INFO: Analyzing hidden import 'PySide6.Qt3DExtras'
+21693 INFO: Processing standard module hook 'hook-PySide6.Qt3DExtras.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+21772 INFO: Analyzing hidden import 'PySide6.Qt3DInput'
+21785 INFO: Processing standard module hook 'hook-PySide6.Qt3DInput.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+21861 INFO: Analyzing hidden import 'PySide6.Qt3DLogic'
+21862 INFO: Processing standard module hook 'hook-PySide6.Qt3DLogic.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+21939 INFO: Analyzing hidden import 'PySide6.QtAsyncio'
+21958 INFO: Analyzing hidden import 'PySide6.QtBluetooth'
+21999 INFO: Processing standard module hook 'hook-PySide6.QtBluetooth.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+22074 INFO: Analyzing hidden import 'PySide6.QtCharts'
+22148 INFO: Processing standard module hook 'hook-PySide6.QtCharts.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+22225 INFO: Analyzing hidden import 'PySide6.QtConcurrent'
+22228 INFO: Processing standard module hook 'hook-PySide6.QtConcurrent.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+22301 INFO: Analyzing hidden import 'PySide6.QtDBus'
+22324 INFO: Processing standard module hook 'hook-PySide6.QtDBus.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+22400 INFO: Analyzing hidden import 'PySide6.QtDataVisualization'
+22472 INFO: Processing standard module hook 'hook-PySide6.QtDataVisualization.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+22550 INFO: Analyzing hidden import 'PySide6.QtDesigner'
+22570 INFO: Processing standard module hook 'hook-PySide6.QtDesigner.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+22653 INFO: Analyzing hidden import 'PySide6.QtGraphs'
+22747 INFO: Processing standard module hook 'hook-PySide6.QtGraphs.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+22855 INFO: Processing standard module hook 'hook-PySide6.QtQml.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+23259 INFO: Analyzing hidden import 'PySide6.QtGraphsWidgets'
+23271 INFO: Processing standard module hook 'hook-PySide6.QtGraphsWidgets.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+23401 INFO: Processing standard module hook 'hook-PySide6.QtQuick.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+23485 INFO: Processing standard module hook 'hook-PySide6.QtQuickWidgets.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+23554 INFO: Analyzing hidden import 'PySide6.QtHelp'
+23565 INFO: Processing standard module hook 'hook-PySide6.QtHelp.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+23638 INFO: Analyzing hidden import 'PySide6.QtHttpServer'
+23647 INFO: Processing standard module hook 'hook-PySide6.QtHttpServer.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+23717 INFO: Analyzing hidden import 'PySide6.QtLocation'
+23754 INFO: Processing standard module hook 'hook-PySide6.QtLocation.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+23858 INFO: Processing standard module hook 'hook-PySide6.QtPositioning.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+23936 INFO: Analyzing hidden import 'PySide6.QtMultimedia'
+23995 INFO: Processing standard module hook 'hook-PySide6.QtMultimedia.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+24078 INFO: Analyzing hidden import 'PySide6.QtMultimediaWidgets'
+24081 INFO: Processing standard module hook 'hook-PySide6.QtMultimediaWidgets.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+24152 INFO: Analyzing hidden import 'PySide6.QtNetworkAuth'
+24170 INFO: Processing standard module hook 'hook-PySide6.QtNetworkAuth.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+24246 INFO: Analyzing hidden import 'PySide6.QtNfc'
+24262 INFO: Processing standard module hook 'hook-PySide6.QtNfc.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+24337 INFO: Analyzing hidden import 'PySide6.QtPdf'
+24348 INFO: Processing standard module hook 'hook-PySide6.QtPdf.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+24430 INFO: Analyzing hidden import 'PySide6.QtPdfWidgets'
+24434 INFO: Processing standard module hook 'hook-PySide6.QtPdfWidgets.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+24511 INFO: Analyzing hidden import 'PySide6.QtPrintSupport'
+24522 INFO: Processing standard module hook 'hook-PySide6.QtPrintSupport.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+24599 INFO: Analyzing hidden import 'PySide6.QtQuick3D'
+24609 INFO: Processing standard module hook 'hook-PySide6.QtQuick3D.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+24686 INFO: Analyzing hidden import 'PySide6.QtQuickControls2'
+24687 INFO: Processing standard module hook 'hook-PySide6.QtQuickControls2.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+24763 INFO: Analyzing hidden import 'PySide6.QtQuickTest'
+24763 INFO: Analyzing hidden import 'PySide6.QtRemoteObjects'
+24776 INFO: Processing standard module hook 'hook-PySide6.QtRemoteObjects.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+24852 INFO: Analyzing hidden import 'PySide6.QtScxml'
+24864 INFO: Processing standard module hook 'hook-PySide6.QtScxml.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+24944 INFO: Analyzing hidden import 'PySide6.QtSensors'
+24968 INFO: Processing standard module hook 'hook-PySide6.QtSensors.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+25063 INFO: Analyzing hidden import 'PySide6.QtSerialBus'
+25086 INFO: Processing standard module hook 'hook-PySide6.QtSerialBus.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+25163 INFO: Analyzing hidden import 'PySide6.QtSerialPort'
+25169 INFO: Processing standard module hook 'hook-PySide6.QtSerialPort.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+25238 INFO: Analyzing hidden import 'PySide6.QtSpatialAudio'
+25246 INFO: Processing standard module hook 'hook-PySide6.QtSpatialAudio.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+25315 INFO: Analyzing hidden import 'PySide6.QtSql'
+25338 INFO: Processing standard module hook 'hook-PySide6.QtSql.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+25418 INFO: Analyzing hidden import 'PySide6.QtStateMachine'
+25428 INFO: Processing standard module hook 'hook-PySide6.QtStateMachine.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+25499 INFO: Analyzing hidden import 'PySide6.QtSvgWidgets'
+25501 INFO: Processing standard module hook 'hook-PySide6.QtSvgWidgets.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+25570 INFO: Analyzing hidden import 'PySide6.QtTextToSpeech'
+25577 INFO: Processing standard module hook 'hook-PySide6.QtTextToSpeech.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+25651 INFO: Analyzing hidden import 'PySide6.QtUiTools'
+25653 INFO: Processing standard module hook 'hook-PySide6.QtUiTools.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+25725 INFO: Analyzing hidden import 'PySide6.QtWebChannel'
+25726 INFO: Processing standard module hook 'hook-PySide6.QtWebChannel.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+25799 INFO: Analyzing hidden import 'PySide6.QtWebEngineCore'
+25841 INFO: Processing standard module hook 'hook-PySide6.QtWebEngineCore.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+26061 INFO: Analyzing hidden import 'PySide6.QtWebEngineQuick'
+26066 INFO: Processing standard module hook 'hook-PySide6.QtWebEngineQuick.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+26138 INFO: Analyzing hidden import 'PySide6.QtWebEngineWidgets'
+26142 INFO: Processing standard module hook 'hook-PySide6.QtWebEngineWidgets.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+26217 INFO: Analyzing hidden import 'PySide6.QtWebSockets'
+26225 INFO: Processing standard module hook 'hook-PySide6.QtWebSockets.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+26295 INFO: Analyzing hidden import 'PySide6.QtWebView'
+26296 INFO: Analyzing hidden import 'PySide6.QtXml'
+26311 INFO: Processing standard module hook 'hook-PySide6.QtXml.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+26383 INFO: Analyzing hidden import 'PySide6._config'
+26384 INFO: Analyzing hidden import 'PySide6._git_pyside_version'
+26384 INFO: Analyzing hidden import 'PySide6.scripts'
+26384 INFO: Analyzing hidden import 'PySide6.scripts.android_deploy'
+26388 INFO: Analyzing hidden import 'PySide6.scripts.deploy'
+26391 INFO: Analyzing hidden import 'PySide6.scripts.metaobjectdump'
+26400 INFO: Analyzing hidden import 'PySide6.scripts.project'
+26407 INFO: Analyzing hidden import 'PySide6.scripts.project_lib'
+26425 INFO: Analyzing hidden import 'PySide6.scripts.pyside_tool'
+26430 INFO: Analyzing hidden import 'PySide6.scripts.qml'
+26434 INFO: Analyzing hidden import 'PySide6.scripts.qtpy2cpp'
+26435 INFO: Analyzing hidden import 'PySide6.support'
+26435 INFO: Analyzing hidden import 'PySide6.support.deprecated'
+26436 INFO: Analyzing hidden import 'PySide6.support.generate_pyi'
+26438 INFO: Analyzing hidden import 'pyqtgraph.PlotData'
+26438 INFO: Analyzing hidden import 'pyqtgraph.configfile'
+26443 INFO: Analyzing hidden import 'pyqtgraph.dockarea'
+26463 INFO: Analyzing hidden import 'pyqtgraph.examples'
+26475 INFO: Analyzing hidden import 'pyqtgraph.examples.Arrow'
+26476 INFO: Analyzing hidden import 'pyqtgraph.examples.AxisItem_label_overlap'
+26477 INFO: Analyzing hidden import 'pyqtgraph.examples.BarGraphItem'
+26478 INFO: Analyzing hidden import 'pyqtgraph.examples.BoxplotItem'
+26479 INFO: Analyzing hidden import 'pyqtgraph.examples.CLIexample'
+26479 INFO: Analyzing hidden import 'pyqtgraph.examples.ColorBarItem'
+26481 INFO: Analyzing hidden import 'pyqtgraph.examples.ColorButton'
+26481 INFO: Analyzing hidden import 'pyqtgraph.examples.ColorGradientPlots'
+26484 INFO: Analyzing hidden import 'pyqtgraph.examples.ConsoleWidget'
+26485 INFO: Analyzing hidden import 'pyqtgraph.examples.CustomGraphItem'
+26487 INFO: Analyzing hidden import 'pyqtgraph.examples.DataSlicing'
+26488 INFO: Analyzing hidden import 'pyqtgraph.examples.DataTreeWidget'
+26489 INFO: Analyzing hidden import 'pyqtgraph.examples.DateAxisItem'
+26490 INFO: Analyzing hidden import 'pyqtgraph.examples.DateAxisItem_QtDesigner'
+26491 INFO: Analyzing hidden import 'pyqtgraph.examples.DiffTreeWidget'
+26491 INFO: Analyzing hidden import 'pyqtgraph.examples.Draw'
+26492 INFO: Analyzing hidden import 'pyqtgraph.examples.ErrorBarItem'
+26492 INFO: Analyzing hidden import 'pyqtgraph.examples.FillBetweenItem'
+26494 INFO: Analyzing hidden import 'pyqtgraph.examples.Flowchart'
+26573 INFO: Analyzing hidden import 'pyqtgraph.examples.FlowchartCustomNode'
+26575 INFO: Analyzing hidden import 'pyqtgraph.examples.GLBarGraphItem'
+26642 INFO: Analyzing hidden import 'pyqtgraph.examples.GLGradientLegendItem'
+26643 INFO: Analyzing hidden import 'pyqtgraph.examples.GLGraphItem'
+26644 INFO: Analyzing hidden import 'pyqtgraph.examples.GLImageItem'
+26645 INFO: Analyzing hidden import 'pyqtgraph.examples.GLIsosurface'
+26646 INFO: Analyzing hidden import 'pyqtgraph.examples.GLLinePlotItem'
+26648 INFO: Analyzing hidden import 'pyqtgraph.examples.GLMeshItem'
+26650 INFO: Analyzing hidden import 'pyqtgraph.examples.GLPainterItem'
+26652 INFO: Analyzing hidden import 'pyqtgraph.examples.GLScatterPlotItem'
+26654 INFO: Analyzing hidden import 'pyqtgraph.examples.GLSurfacePlot'
+26657 INFO: Analyzing hidden import 'pyqtgraph.examples.GLTextItem'
+26658 INFO: Analyzing hidden import 'pyqtgraph.examples.GLViewWidget'
+26659 INFO: Analyzing hidden import 'pyqtgraph.examples.GLVolumeItem'
+26660 INFO: Analyzing hidden import 'pyqtgraph.examples.GLshaders'
+26662 INFO: Analyzing hidden import 'pyqtgraph.examples.GradientEditor'
+26662 INFO: Analyzing hidden import 'pyqtgraph.examples.GradientWidget'
+26663 INFO: Analyzing hidden import 'pyqtgraph.examples.GraphItem'
+26663 INFO: Analyzing hidden import 'pyqtgraph.examples.GraphicsLayout'
+26665 INFO: Analyzing hidden import 'pyqtgraph.examples.GraphicsScene'
+26665 INFO: Analyzing hidden import 'pyqtgraph.examples.HistogramLUT'
+26667 INFO: Analyzing hidden import 'pyqtgraph.examples.ImageItem'
+26667 INFO: Analyzing hidden import 'pyqtgraph.examples.ImageView'
+26668 INFO: Analyzing hidden import 'pyqtgraph.examples.InfiniteLine'
+26670 INFO: Analyzing hidden import 'pyqtgraph.examples.InteractiveParameter'
+26671 INFO: Analyzing hidden import 'pyqtgraph.examples.JoystickButton'
+26672 INFO: Analyzing hidden import 'pyqtgraph.examples.Legend'
+26674 INFO: Analyzing hidden import 'pyqtgraph.examples.LogPlotTest'
+26674 INFO: Analyzing hidden import 'pyqtgraph.examples.MatrixDisplayExample'
+26675 INFO: Analyzing hidden import 'pyqtgraph.examples.MouseSelection'
+26677 INFO: Analyzing hidden import 'pyqtgraph.examples.MultiDataPlot'
+26678 INFO: Analyzing hidden import 'pyqtgraph.examples.MultiPlotSpeedTest'
+26680 INFO: Analyzing hidden import 'pyqtgraph.examples.MultiplePlotAxes'
+26681 INFO: Analyzing hidden import 'pyqtgraph.examples.NonUniformImage'
+26686 INFO: Analyzing hidden import 'pyqtgraph.examples.PColorMeshItem'
+26688 INFO: Analyzing hidden import 'pyqtgraph.examples.PanningPlot'
+26688 INFO: Analyzing hidden import 'pyqtgraph.examples.PlotAutoRange'
+26689 INFO: Analyzing hidden import 'pyqtgraph.examples.PlotSpeedTest'
+26692 INFO: Analyzing hidden import 'pyqtgraph.examples.PlotWidget'
+26694 INFO: Analyzing hidden import 'pyqtgraph.examples.Plotting'
+26696 INFO: Analyzing hidden import 'pyqtgraph.examples.ProgressDialog'
+26697 INFO: Analyzing hidden import 'pyqtgraph.examples.ROIExamples'
+26700 INFO: Analyzing hidden import 'pyqtgraph.examples.ROItypes'
+26702 INFO: Analyzing hidden import 'pyqtgraph.examples.RemoteGraphicsView'
+26703 INFO: Analyzing hidden import 'pyqtgraph.examples.RemoteSpeedTest'
+26704 INFO: Analyzing hidden import 'pyqtgraph.examples.RunExampleApp'
+26704 INFO: Analyzing hidden import 'pyqtgraph.examples.ScaleBar'
+26705 INFO: Analyzing hidden import 'pyqtgraph.examples.ScatterPlot'
+26708 INFO: Analyzing hidden import 'pyqtgraph.examples.ScatterPlotSpeedTest'
+26710 INFO: Analyzing hidden import 'pyqtgraph.examples.ScatterPlotWidget'
+26712 INFO: Analyzing hidden import 'pyqtgraph.examples.SimplePlot'
+26712 INFO: Analyzing hidden import 'pyqtgraph.examples.SpinBox'
+26714 INFO: Analyzing hidden import 'pyqtgraph.examples.Symbols'
+26715 INFO: Analyzing hidden import 'pyqtgraph.examples.TableWidget'
+26715 INFO: Analyzing hidden import 'pyqtgraph.examples.TreeWidget'
+26716 INFO: Analyzing hidden import 'pyqtgraph.examples.VideoSpeedTest'
+26723 INFO: Analyzing hidden import 'pyqtgraph.examples.VideoTemplate_generic'
+26729 INFO: Analyzing hidden import 'pyqtgraph.examples.ViewBox'
+26731 INFO: Analyzing hidden import 'pyqtgraph.examples.ViewBoxFeatures'
+26733 INFO: Analyzing hidden import 'pyqtgraph.examples.ViewLimits'
+26733 INFO: Analyzing hidden import 'pyqtgraph.examples.__main__'
+26733 INFO: Analyzing hidden import 'pyqtgraph.examples._buildParamTypes'
+26735 INFO: Analyzing hidden import 'pyqtgraph.examples._paramtreecfg'
+26737 INFO: Analyzing hidden import 'pyqtgraph.examples.beeswarm'
+26737 INFO: Analyzing hidden import 'pyqtgraph.examples.colorMaps'
+26739 INFO: Analyzing hidden import 'pyqtgraph.examples.colorMapsLinearized'
+26741 INFO: Analyzing hidden import 'pyqtgraph.examples.console_exception_inspection'
+26744 INFO: Analyzing hidden import 'pyqtgraph.examples.contextMenu'
+26746 INFO: Analyzing hidden import 'pyqtgraph.examples.crosshair'
+26747 INFO: Analyzing hidden import 'pyqtgraph.examples.customGraphicsItem'
+26748 INFO: Analyzing hidden import 'pyqtgraph.examples.customPlot'
+26750 INFO: Analyzing hidden import 'pyqtgraph.examples.designerExample'
+26751 INFO: Analyzing hidden import 'pyqtgraph.examples.dockarea'
+26753 INFO: Analyzing hidden import 'pyqtgraph.examples.exampleLoaderTemplate_generic'
+26755 INFO: Analyzing hidden import 'pyqtgraph.examples.fractal'
+26757 INFO: Analyzing hidden import 'pyqtgraph.examples.glow'
+26759 INFO: Analyzing hidden import 'pyqtgraph.examples.hdf5'
+26762 INFO: Analyzing hidden import 'pyqtgraph.examples.histogram'
+26762 INFO: Analyzing hidden import 'pyqtgraph.examples.imageAnalysis'
+26764 INFO: Analyzing hidden import 'pyqtgraph.examples.infiniteline_performance'
+26765 INFO: Analyzing hidden import 'pyqtgraph.examples.isocurve'
+26766 INFO: Analyzing hidden import 'pyqtgraph.examples.jupyter_console_example'
+26768 INFO: Analyzing hidden import 'pyqtgraph.examples.linkedViews'
+26768 INFO: Analyzing hidden import 'pyqtgraph.examples.logAxis'
+26769 INFO: Analyzing hidden import 'pyqtgraph.examples.multiplePlotSpeedTest'
+26770 INFO: Analyzing hidden import 'pyqtgraph.examples.multiprocess'
+26771 INFO: Analyzing hidden import 'pyqtgraph.examples.optics'
+26782 INFO: Analyzing hidden import 'pyqtgraph.examples.optics_demos'
+26785 INFO: Analyzing hidden import 'pyqtgraph.examples.parallelize'
+26786 INFO: Analyzing hidden import 'pyqtgraph.examples.parametertree'
+26789 INFO: Analyzing hidden import 'pyqtgraph.examples.relativity'
+26806 INFO: Analyzing hidden import 'pyqtgraph.examples.relativity_demo'
+26807 INFO: Analyzing hidden import 'pyqtgraph.examples.scrollingPlots'
+26809 INFO: Analyzing hidden import 'pyqtgraph.examples.syntax'
+26813 INFO: Analyzing hidden import 'pyqtgraph.examples.template'
+26813 INFO: Analyzing hidden import 'pyqtgraph.examples.test_examples'
+26818 INFO: Analyzing hidden import 'pyqtgraph.examples.text'
+26819 INFO: Analyzing hidden import 'pyqtgraph.examples.verlet_chain'
+26822 INFO: Analyzing hidden import 'pyqtgraph.examples.verlet_chain_demo'
+26825 INFO: Analyzing hidden import 'pyqtgraph.frozenSupport'
+26826 INFO: Analyzing hidden import 'pyqtgraph.multiprocess.bootstrap'
+26827 INFO: Analyzing hidden import 'pyqtgraph.util.garbage_collector'
+26828 INFO: Analyzing hidden import 'pyqtgraph.util.get_resolution'
+26829 INFO: Analyzing hidden import 'pyqtgraph.util.glinfo'
+26829 INFO: Analyzing hidden import 'beautifulsoup4'
+26830 ERROR: Hidden import 'beautifulsoup4' not found
+26830 INFO: Analyzing hidden import 'websockets.legacy'
+26830 INFO: Analyzing hidden import 'protobuf'
+26830 ERROR: Hidden import 'protobuf' not found
+26830 INFO: Processing module hooks (post-graph stage)...
+26993 INFO: Processing standard module hook 'hook-pycparser.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+27372 WARNING: Hidden import "jinja2" not found!
+28387 WARNING: Hidden import "pycparser.lextab" not found!
+28387 WARNING: Hidden import "pycparser.yacctab" not found!
+28410 INFO: Performing binary vs. data reclassification (4179 entries)
+29107 INFO: Looking for ctypes DLLs
+29121 WARNING: Library user32 required via ctypes not found
+29125 WARNING: Library msvcrt required via ctypes not found
+29127 WARNING: Library ole32 required via ctypes not found
+29127 WARNING: Library shell32 required via ctypes not found
+29143 INFO: Analyzing run-time hooks ...
+29148 INFO: Including run-time hook 'pyi_rth_inspect.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks/rthooks'
+29150 INFO: Including run-time hook 'pyi_rth_pkgutil.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks/rthooks'
+29150 INFO: Including run-time hook 'pyi_rth_multiprocessing.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks/rthooks'
+29151 INFO: Including run-time hook 'pyi_rth_setuptools.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks/rthooks'
+29152 INFO: Including run-time hook 'pyi_rth_pyqtgraph_multiprocess.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/_pyinstaller_hooks_contrib/rthooks'
+29153 INFO: Including run-time hook 'pyi_rth_pyside6.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks/rthooks'
+29154 INFO: Processing pre-find-module-path hook 'hook-_pyi_rth_utils.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks/pre_find_module_path'
+29154 INFO: Processing standard module hook 'hook-_pyi_rth_utils.py' from '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/hooks'
+29209 INFO: Creating base_library.zip...
+29219 INFO: Looking for dynamic libraries
+30395 WARNING: Library not found: could not resolve '/Applications/Postgres.app/Contents/Versions/14/lib/libpq.5.dylib', dependency of '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PySide6/Qt/plugins/sqldrivers/libqsqlpsql.dylib'.
+30395 WARNING: Library not found: could not resolve '/opt/homebrew/opt/libiodbc/lib/libiodbc.2.dylib', dependency of '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PySide6/Qt/plugins/sqldrivers/libqsqlodbc.dylib'.
+30395 WARNING: Library not found: could not resolve '/usr/local/lib/libmimerapi.dylib', dependency of '/Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PySide6/Qt/plugins/sqldrivers/libqsqlmimer.dylib'.
+37637 INFO: Warnings written to /Users/taehyunkim/Project/claude-test/nq_backtester/build/nq_backtester/warn-nq_backtester.txt
+37680 INFO: Graph cross-reference written to /Users/taehyunkim/Project/claude-test/nq_backtester/build/nq_backtester/xref-nq_backtester.html
+38242 INFO: checking PYZ
+38242 INFO: Building PYZ because PYZ-00.toc is non existent
+38242 INFO: Building PYZ (ZlibArchive) /Users/taehyunkim/Project/claude-test/nq_backtester/build/nq_backtester/PYZ-00.pyz
+39180 INFO: Building PYZ (ZlibArchive) /Users/taehyunkim/Project/claude-test/nq_backtester/build/nq_backtester/PYZ-00.pyz completed successfully.
+39197 INFO: EXE target arch: arm64
+39197 INFO: Code signing identity: None
+39198 INFO: checking PKG
+39198 INFO: Building PKG because PKG-00.toc is non existent
+39198 INFO: Building PKG (CArchive) NQBacktester.pkg
+39210 INFO: Building PKG (CArchive) NQBacktester.pkg completed successfully.
+39211 INFO: Bootloader /Users/taehyunkim/Project/claude-test/nq_backtester/venv/lib/python3.13/site-packages/PyInstaller/bootloader/Darwin-64bit/runw
+39211 INFO: checking EXE
+39211 INFO: Building EXE because EXE-00.toc is non existent
+39211 INFO: Building EXE from EXE-00.toc
+39211 INFO: Copying bootloader EXE to /Users/taehyunkim/Project/claude-test/nq_backtester/build/nq_backtester/NQBacktester
+39211 INFO: Converting EXE to target arch (arm64)
+39551 INFO: Removing signature(s) from EXE
+39581 INFO: Modifying Mach-O image UUID(s) in EXE
+39590 INFO: Appending PKG archive to EXE
+39596 INFO: Fixing EXE headers for code signing
+39598 INFO: Re-signing the EXE
+39627 INFO: Building EXE from EXE-00.toc completed successfully.
+39648 INFO: checking COLLECT
+39648 INFO: Building COLLECT because COLLECT-00.toc is non existent
+39648 INFO: Building COLLECT COLLECT-00.toc
+67131 INFO: Building COLLECT COLLECT-00.toc completed successfully.
+67184 INFO: Build complete! The results are available in: /Users/taehyunkim/Project/claude-test/nq_backtester/dist
