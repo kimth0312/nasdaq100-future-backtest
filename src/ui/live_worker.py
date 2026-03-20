@@ -98,9 +98,9 @@ class LiveWorker(QThread):
                     self._prev_close = float(new_bars["Close"].iloc[-1])
                 self.new_bars.emit(new_bars)
 
+            # latest_bar는 항상 반환되므로 None 체크 불필요하나 방어적으로 유지
             if latest_bar is not None:
                 self.latest_bar_updated.emit(latest_bar)
-                # 현재가 업데이트
                 price = float(latest_bar["Close"])
                 prev = self._prev_close if self._prev_close else price
                 change_pct = ((price - prev) / prev * 100) if prev else 0.0

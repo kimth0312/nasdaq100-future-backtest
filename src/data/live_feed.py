@@ -56,41 +56,43 @@ class LiveFeed:
 
         df = self._fetch_range(start, end)
         if df is not None and not df.empty:
-            self._last_ts = df.index[-1]
-            logger.info(f"[LiveFeed] 초기 데이터: {len(df)}행, 마지막 바={self._last_ts}")
+            # yfinance는 최신 바의 Volume을 0으로 반환하는 경우가 있음.
+            # Volume=0인 바는 아직 확정되지 않은 것으로 보고 _last_ts에서 제외.
+            # 이 바들은 다음 poll()에서 Volume이 채워지면 new_bars로 감지됨.
+            nonzero_vol = df[df["Volume"] > 0]
+            self._last_ts = nonzero_vol.index[-1] if not nonzero_vol.empty else df.index[-1]
+            logger.info(f"[LiveFeed] 초기 데이터: {len(df)}행, last_ts={self._last_ts}")
         return df if df is not None else pd.DataFrame(columns=["Open", "High", "Low", "Close", "Volume"])
 
-    def poll(self) -> tuple[pd.DataFrame, pd.Series | None]:
+    def poll(self) -> tuple[pd.DataFrame, pd.Series]:
         """
         최신 데이터 폴링.
 
         Returns:
             (new_bars, latest_bar)
             - new_bars: 마지막 폴링 이후 새로 완성된 바 DataFrame (비어있을 수 있음)
-            - latest_bar: 현재 진행 중인(미완성) 최신 바 Series (없으면 None)
+            - latest_bar: 가장 최신 바 Series (항상 반환 — price 및 Volume 업데이트용)
         """
         end = datetime.now(timezone.utc)
-        # 충분한 여유를 두고 최근 데이터 조회
         lookback_minutes = max(10, self.poll_seconds // 60 * 5 + 30)
         start = end - timedelta(minutes=lookback_minutes)
 
         df = self._fetch_range(start, end)
+        empty = pd.DataFrame(columns=["Open", "High", "Low", "Close", "Volume"])
         if df is None or df.empty:
-            return pd.DataFrame(columns=["Open", "High", "Low", "Close", "Volume"]), None
+            return empty, None
 
-        # 1분봉/소단위: 마지막 바는 아직 완성 중일 수 있음
-        # yfinance는 현재 진행 중인 바도 포함하여 반환
         now = datetime.now(timezone.utc)
         interval_seconds = self._interval_to_seconds()
         last_bar_ts = df.index[-1]
-
-        # 마지막 바 완성 여부 확인 (last_bar_ts + interval_duration > now 이면 미완성)
         last_bar_end = last_bar_ts + timedelta(seconds=interval_seconds)
-        is_last_incomplete = last_bar_end.replace(tzinfo=timezone.utc) > now if last_bar_ts.tzinfo is None else (
-            last_bar_end > now
-        )
+        last_volume = float(df["Volume"].iloc[-1]) if "Volume" in df.columns else 1.0
 
-        latest_bar = df.iloc[-1] if is_last_incomplete else None
+        # 미완성 바 판정: 시간이 아직 안 됐거나 Volume이 0이면 미완성
+        is_last_incomplete = (last_bar_end > now) or (last_volume == 0)
+
+        # latest_bar는 항상 반환 (price 표시 + Volume 뒤늦은 업데이트 모두 처리)
+        latest_bar = df.iloc[-1]
         completed_df = df.iloc[:-1] if is_last_incomplete else df
 
         # 이전 폴링 이후 새로 생성된 바 필터링
